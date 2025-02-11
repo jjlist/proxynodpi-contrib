@@ -3,4 +3,5 @@ backup/
 logs/
 venv/
 shell.nix
+build/
 *.tar.gz

@@ -1,4 +1,4 @@
-#!/bin/sh -eux
+#!/bin/bash -eux
 
 # if [[ $1 != "run" ]]; then
 # 	file="$1"
@@ -23,4 +23,6 @@ python3 c_setup.py build_ext --inplace
 
 if [[ $1 = "run" ]]; then
 	python3 c_main.py
+else
+	return 0
 fi
