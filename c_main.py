@@ -6,7 +6,7 @@ from pathlib import Path
 from datetime import datetime
 import gzip
 from logging_handler import LOG_FILENAME
-from proxyserver import ProxyServer
+from c_proxyserver import ProxyServer
 
 
 __author__ = "Egor Babenko"
