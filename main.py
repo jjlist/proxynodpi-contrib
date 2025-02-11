@@ -21,21 +21,21 @@ __status__ = "Development"
 
 
 def datetimeToDateFormat(dtsource, format:str) -> str:
-  return dtsource.strftime(format)
+    return dtsource.strftime(format)
 
 def checkAndArchLog():
-  LOG_DATETIME_FORMAT:str = '%Y-%m-%d-%H%M%S'
-  os.path.isdir(Path(LOG_FILENAME).absolute().parent) or os.mkdir(Path(LOG_FILENAME).absolute().parent)
-  if os.path.isfile(LOG_FILENAME):
-    gzName = LOG_FILENAME + '.' + datetimeToDateFormat(datetime.now(), LOG_DATETIME_FORMAT)
-    with open(LOG_FILENAME, 'rb') as f_in, gzip.open(f'{gzName}.gz', 'wb') as f_out:
-      f_out.writelines(f_in)
-  open(LOG_FILENAME, 'w').close()
+    LOG_DATETIME_FORMAT:str = '%Y-%m-%d-%H%M%S'
+    os.path.isdir(Path(LOG_FILENAME).absolute().parent) or os.mkdir(Path(LOG_FILENAME).absolute().parent)
+    if os.path.isfile(LOG_FILENAME):
+        gzName = LOG_FILENAME + '.' + datetimeToDateFormat(datetime.now(), LOG_DATETIME_FORMAT)
+        with open(LOG_FILENAME, 'rb') as f_in, gzip.open(f'{gzName}.gz', 'wb') as f_out:
+            f_out.writelines(f_in)
+    open(LOG_FILENAME, 'w').close()
 
 if __name__ == '__main__':
-  # Operation with log files
-  checkAndArchLog()
-  """
+    # Operation with log files
+    checkAndArchLog()
+    """
   # Set '127.0.0.1' if you need to listen localhost only, otherwise any incomming connection. By default: None
   host='127.0.0.1'
   # Listen any free port. By default: 8881
@@ -49,4 +49,5 @@ if __name__ == '__main__':
   # Run with parameters
   ProxyServer(host='127.0.0.1', port=8881, debug=True, show_logs=True, show_stats=True)
   """
-  ProxyServer()
+    # ProxyServer(host='127.0.0.1')
+    ProxyServer()

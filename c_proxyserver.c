@@ -1503,11 +1503,11 @@ struct __pyx_defaults {
 };
 
 /* "c_proxyserver.py":40
- *     asyncio.run(self.main())
+ *         asyncio.run(self.main())
  * 
- *   async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
+ *     async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
  */
 struct __pyx_obj_13c_proxyserver___pyx_scope_struct__connect {
   PyObject_HEAD
@@ -1530,11 +1530,11 @@ struct __pyx_obj_13c_proxyserver___pyx_scope_struct__connect {
 
 
 /* "c_proxyserver.py":83
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
- *   async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
- *     self.datas += 1
- *     self.globDatas += self.datas
+ *     async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
+ *         self.datas += 1
+ *         self.globDatas += self.datas
  */
 struct __pyx_obj_13c_proxyserver___pyx_scope_struct_1_fragment {
   PyObject_HEAD
@@ -1559,11 +1559,11 @@ struct __pyx_obj_13c_proxyserver___pyx_scope_struct_1_fragment {
 
 
 /* "c_proxyserver.py":135
- *     await remoteWriter.drain()
+ *         await remoteWriter.drain()
  * 
- *   async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
+ *     async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
  */
 struct __pyx_obj_13c_proxyserver___pyx_scope_struct_2_pipe {
   PyObject_HEAD
@@ -1579,11 +1579,11 @@ struct __pyx_obj_13c_proxyserver___pyx_scope_struct_2_pipe {
 
 
 /* "c_proxyserver.py":153
- *     self.chunks:int = 0
+ *         self.chunks:int = 0
  * 
- *   async def main(self):             # <<<<<<<<<<<<<<
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
+ *     async def main(self):             # <<<<<<<<<<<<<<
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
  */
 struct __pyx_obj_13c_proxyserver___pyx_scope_struct_3_main {
   PyObject_HEAD
@@ -3675,9 +3675,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 /* "c_proxyserver.py":21
  * 
  * class ProxyServer():
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):             # <<<<<<<<<<<<<<
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):             # <<<<<<<<<<<<<<
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'
  */
 
 static PyObject *__pyx_pf_13c_proxyserver___defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
@@ -3922,10 +3922,10 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
 
   /* "c_proxyserver.py":22
  * class ProxyServer():
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):
- *     self.log = initLogger(self)             # <<<<<<<<<<<<<<
- *     self.blockedlistFile = 'blacklist.txt'
- *     self.tasks:list = list()
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):
+ *         self.log = initLogger(self)             # <<<<<<<<<<<<<<
+ *         self.blockedlistFile = 'blacklist.txt'
+ *         self.tasks:list = list()
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_initLogger); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 22, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3955,20 +3955,20 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":23
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'             # <<<<<<<<<<<<<<
- *     self.tasks:list = list()
- *     self.bufferSize:int = 4096
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'             # <<<<<<<<<<<<<<
+ *         self.tasks:list = list()
+ *         self.bufferSize:int = 4096
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_blockedlistFile, __pyx_kp_s_blacklist_txt) < 0) __PYX_ERR(0, 23, __pyx_L1_error)
 
   /* "c_proxyserver.py":24
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'
- *     self.tasks:list = list()             # <<<<<<<<<<<<<<
- *     self.bufferSize:int = 4096
- *     self.host:str = host
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'
+ *         self.tasks:list = list()             # <<<<<<<<<<<<<<
+ *         self.bufferSize:int = 4096
+ *         self.host:str = host
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 24, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -3976,118 +3976,118 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":25
- *     self.blockedlistFile = 'blacklist.txt'
- *     self.tasks:list = list()
- *     self.bufferSize:int = 4096             # <<<<<<<<<<<<<<
- *     self.host:str = host
- *     self.port:int = port
+ *         self.blockedlistFile = 'blacklist.txt'
+ *         self.tasks:list = list()
+ *         self.bufferSize:int = 4096             # <<<<<<<<<<<<<<
+ *         self.host:str = host
+ *         self.port:int = port
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bufferSize, __pyx_int_4096) < 0) __PYX_ERR(0, 25, __pyx_L1_error)
 
   /* "c_proxyserver.py":26
- *     self.tasks:list = list()
- *     self.bufferSize:int = 4096
- *     self.host:str = host             # <<<<<<<<<<<<<<
- *     self.port:int = port
- *     self.debug:bool = debug
+ *         self.tasks:list = list()
+ *         self.bufferSize:int = 4096
+ *         self.host:str = host             # <<<<<<<<<<<<<<
+ *         self.port:int = port
+ *         self.debug:bool = debug
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host, __pyx_v_host) < 0) __PYX_ERR(0, 26, __pyx_L1_error)
 
   /* "c_proxyserver.py":27
- *     self.bufferSize:int = 4096
- *     self.host:str = host
- *     self.port:int = port             # <<<<<<<<<<<<<<
- *     self.debug:bool = debug
- *     self.showLogs:bool = show_logs
+ *         self.bufferSize:int = 4096
+ *         self.host:str = host
+ *         self.port:int = port             # <<<<<<<<<<<<<<
+ *         self.debug:bool = debug
+ *         self.showLogs:bool = show_logs
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_port, __pyx_v_port) < 0) __PYX_ERR(0, 27, __pyx_L1_error)
 
   /* "c_proxyserver.py":28
- *     self.host:str = host
- *     self.port:int = port
- *     self.debug:bool = debug             # <<<<<<<<<<<<<<
- *     self.showLogs:bool = show_logs
- *     self.showStats:bool = show_stats
+ *         self.host:str = host
+ *         self.port:int = port
+ *         self.debug:bool = debug             # <<<<<<<<<<<<<<
+ *         self.showLogs:bool = show_logs
+ *         self.showStats:bool = show_stats
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_debug, __pyx_v_debug) < 0) __PYX_ERR(0, 28, __pyx_L1_error)
 
   /* "c_proxyserver.py":29
- *     self.port:int = port
- *     self.debug:bool = debug
- *     self.showLogs:bool = show_logs             # <<<<<<<<<<<<<<
- *     self.showStats:bool = show_stats
- *     self.conns:int = 0
+ *         self.port:int = port
+ *         self.debug:bool = debug
+ *         self.showLogs:bool = show_logs             # <<<<<<<<<<<<<<
+ *         self.showStats:bool = show_stats
+ *         self.conns:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_showLogs, __pyx_v_show_logs) < 0) __PYX_ERR(0, 29, __pyx_L1_error)
 
   /* "c_proxyserver.py":30
- *     self.debug:bool = debug
- *     self.showLogs:bool = show_logs
- *     self.showStats:bool = show_stats             # <<<<<<<<<<<<<<
- *     self.conns:int = 0
- *     self.globConns:int = 0
+ *         self.debug:bool = debug
+ *         self.showLogs:bool = show_logs
+ *         self.showStats:bool = show_stats             # <<<<<<<<<<<<<<
+ *         self.conns:int = 0
+ *         self.globConns:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_showStats, __pyx_v_show_stats) < 0) __PYX_ERR(0, 30, __pyx_L1_error)
 
   /* "c_proxyserver.py":31
- *     self.showLogs:bool = show_logs
- *     self.showStats:bool = show_stats
- *     self.conns:int = 0             # <<<<<<<<<<<<<<
- *     self.globConns:int = 0
- *     self.datas:int = 0
+ *         self.showLogs:bool = show_logs
+ *         self.showStats:bool = show_stats
+ *         self.conns:int = 0             # <<<<<<<<<<<<<<
+ *         self.globConns:int = 0
+ *         self.datas:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_conns, __pyx_int_0) < 0) __PYX_ERR(0, 31, __pyx_L1_error)
 
   /* "c_proxyserver.py":32
- *     self.showStats:bool = show_stats
- *     self.conns:int = 0
- *     self.globConns:int = 0             # <<<<<<<<<<<<<<
- *     self.datas:int = 0
- *     self.globDatas:int = 0
+ *         self.showStats:bool = show_stats
+ *         self.conns:int = 0
+ *         self.globConns:int = 0             # <<<<<<<<<<<<<<
+ *         self.datas:int = 0
+ *         self.globDatas:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_globConns, __pyx_int_0) < 0) __PYX_ERR(0, 32, __pyx_L1_error)
 
   /* "c_proxyserver.py":33
- *     self.conns:int = 0
- *     self.globConns:int = 0
- *     self.datas:int = 0             # <<<<<<<<<<<<<<
- *     self.globDatas:int = 0
- *     self.chunks:int = 0
+ *         self.conns:int = 0
+ *         self.globConns:int = 0
+ *         self.datas:int = 0             # <<<<<<<<<<<<<<
+ *         self.globDatas:int = 0
+ *         self.chunks:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_datas, __pyx_int_0) < 0) __PYX_ERR(0, 33, __pyx_L1_error)
 
   /* "c_proxyserver.py":34
- *     self.globConns:int = 0
- *     self.datas:int = 0
- *     self.globDatas:int = 0             # <<<<<<<<<<<<<<
- *     self.chunks:int = 0
- *     self.globChunks:int = 0
+ *         self.globConns:int = 0
+ *         self.datas:int = 0
+ *         self.globDatas:int = 0             # <<<<<<<<<<<<<<
+ *         self.chunks:int = 0
+ *         self.globChunks:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_globDatas, __pyx_int_0) < 0) __PYX_ERR(0, 34, __pyx_L1_error)
 
   /* "c_proxyserver.py":35
- *     self.datas:int = 0
- *     self.globDatas:int = 0
- *     self.chunks:int = 0             # <<<<<<<<<<<<<<
- *     self.globChunks:int = 0
- *     self.start = timeit.default_timer()
+ *         self.datas:int = 0
+ *         self.globDatas:int = 0
+ *         self.chunks:int = 0             # <<<<<<<<<<<<<<
+ *         self.globChunks:int = 0
+ *         self.start = timeit.default_timer()
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_chunks, __pyx_int_0) < 0) __PYX_ERR(0, 35, __pyx_L1_error)
 
   /* "c_proxyserver.py":36
- *     self.globDatas:int = 0
- *     self.chunks:int = 0
- *     self.globChunks:int = 0             # <<<<<<<<<<<<<<
- *     self.start = timeit.default_timer()
- *     asyncio.run(self.main())
+ *         self.globDatas:int = 0
+ *         self.chunks:int = 0
+ *         self.globChunks:int = 0             # <<<<<<<<<<<<<<
+ *         self.start = timeit.default_timer()
+ *         asyncio.run(self.main())
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_globChunks, __pyx_int_0) < 0) __PYX_ERR(0, 36, __pyx_L1_error)
 
   /* "c_proxyserver.py":37
- *     self.chunks:int = 0
- *     self.globChunks:int = 0
- *     self.start = timeit.default_timer()             # <<<<<<<<<<<<<<
- *     asyncio.run(self.main())
+ *         self.chunks:int = 0
+ *         self.globChunks:int = 0
+ *         self.start = timeit.default_timer()             # <<<<<<<<<<<<<<
+ *         asyncio.run(self.main())
  * 
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_timeit); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 37, __pyx_L1_error)
@@ -4121,11 +4121,11 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":38
- *     self.globChunks:int = 0
- *     self.start = timeit.default_timer()
- *     asyncio.run(self.main())             # <<<<<<<<<<<<<<
+ *         self.globChunks:int = 0
+ *         self.start = timeit.default_timer()
+ *         asyncio.run(self.main())             # <<<<<<<<<<<<<<
  * 
- *   async def connect(self, localReader, localWriter):
+ *     async def connect(self, localReader, localWriter):
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 38, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -4184,9 +4184,9 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
   /* "c_proxyserver.py":21
  * 
  * class ProxyServer():
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):             # <<<<<<<<<<<<<<
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):             # <<<<<<<<<<<<<<
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'
  */
 
   /* function exit code */
@@ -4208,11 +4208,11 @@ static PyObject *__pyx_pf_13c_proxyserver_11ProxyServer___init__(CYTHON_UNUSED P
 static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "c_proxyserver.py":40
- *     asyncio.run(self.main())
+ *         asyncio.run(self.main())
  * 
- *   async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
+ *     async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
  */
 
 /* Python wrapper */
@@ -4423,10 +4423,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
   /* "c_proxyserver.py":41
  * 
- *   async def connect(self, localReader, localWriter):
- *     httpData = await localReader.read(self.bufferSize)             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *     async def connect(self, localReader, localWriter):
+ *         httpData = await localReader.read(self.bufferSize)             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localReader, __pyx_n_s_read); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 41, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -4478,10 +4478,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":42
- *   async def connect(self, localReader, localWriter):
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *     async def connect(self, localReader, localWriter):
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  * 
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 42, __pyx_L1_error)
@@ -4491,11 +4491,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   if (__pyx_t_6) {
 
     /* "c_proxyserver.py":43
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')             # <<<<<<<<<<<<<<
  * 
- *     try:
+ *         try:
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 43, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -4557,20 +4557,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "c_proxyserver.py":42
- *   async def connect(self, localReader, localWriter):
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *     async def connect(self, localReader, localWriter):
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  * 
  */
   }
 
   /* "c_proxyserver.py":45
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
- *       host, port = target.split(b":")
+ *         try:             # <<<<<<<<<<<<<<
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
+ *             host, port = target.split(b":")
  */
   {
     __Pyx_ExceptionSave(&__pyx_t_10, &__pyx_t_11, &__pyx_t_12);
@@ -4581,10 +4581,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
       /* "c_proxyserver.py":46
  * 
- *     try:
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]             # <<<<<<<<<<<<<<
- *       host, port = target.split(b":")
- *     except:
+ *         try:
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]             # <<<<<<<<<<<<<<
+ *             host, port = target.split(b":")
+ *         except:
  */
       __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_httpData, __pyx_n_s_split); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 46, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_4);
@@ -4695,11 +4695,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __pyx_t_4 = 0;
 
       /* "c_proxyserver.py":47
- *     try:
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
- *       host, port = target.split(b":")             # <<<<<<<<<<<<<<
- *     except:
- *       localWriter.close()
+ *         try:
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
+ *             host, port = target.split(b":")             # <<<<<<<<<<<<<<
+ *         except:
+ *             localWriter.close()
  */
       __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_target, __pyx_n_s_split); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 47, __pyx_L6_error)
       __Pyx_GOTREF(__pyx_t_4);
@@ -4779,11 +4779,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __pyx_t_1 = 0;
 
       /* "c_proxyserver.py":45
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
- *       host, port = target.split(b":")
+ *         try:             # <<<<<<<<<<<<<<
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
+ *             host, port = target.split(b":")
  */
     }
     __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -4797,11 +4797,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "c_proxyserver.py":48
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
- *       host, port = target.split(b":")
- *     except:             # <<<<<<<<<<<<<<
- *       localWriter.close()
- *       return
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
+ *             host, port = target.split(b":")
+ *         except:             # <<<<<<<<<<<<<<
+ *             localWriter.close()
+ *             return
  */
     /*except:*/ {
       __Pyx_AddTraceback("c_proxyserver.ProxyServer.connect", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -4811,10 +4811,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_XGOTREF(__pyx_t_4);
 
       /* "c_proxyserver.py":49
- *       host, port = target.split(b":")
- *     except:
- *       localWriter.close()             # <<<<<<<<<<<<<<
- *       return
+ *             host, port = target.split(b":")
+ *         except:
+ *             localWriter.close()             # <<<<<<<<<<<<<<
+ *             return
  * 
  */
       __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localWriter, __pyx_n_s_close); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 49, __pyx_L8_except_error)
@@ -4844,11 +4844,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
       /* "c_proxyserver.py":50
- *     except:
- *       localWriter.close()
- *       return             # <<<<<<<<<<<<<<
+ *         except:
+ *             localWriter.close()
+ *             return             # <<<<<<<<<<<<<<
  * 
- *     if type != b"CONNECT":
+ *         if type != b"CONNECT":
  */
       __Pyx_XDECREF(__pyx_r);
       __pyx_r = NULL;
@@ -4859,11 +4859,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     }
 
     /* "c_proxyserver.py":45
- *       self.log.info(f'New connection: {len(httpData)} => {httpData}')
+ *             self.log.info(f'New connection: {len(httpData)} => {httpData}')
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
- *       host, port = target.split(b":")
+ *         try:             # <<<<<<<<<<<<<<
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]
+ *             host, port = target.split(b":")
  */
     __pyx_L8_except_error:;
     __Pyx_XGIVEREF(__pyx_t_10);
@@ -4881,20 +4881,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   }
 
   /* "c_proxyserver.py":52
- *       return
+ *             return
  * 
- *     if type != b"CONNECT":             # <<<<<<<<<<<<<<
- *       localWriter.close()
- *       return
+ *         if type != b"CONNECT":             # <<<<<<<<<<<<<<
+ *             localWriter.close()
+ *             return
  */
   __pyx_t_6 = (__Pyx_PyBytes_Equals(__pyx_cur_scope->__pyx_v_type, __pyx_n_b_CONNECT, Py_NE)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 52, __pyx_L1_error)
   if (__pyx_t_6) {
 
     /* "c_proxyserver.py":53
  * 
- *     if type != b"CONNECT":
- *       localWriter.close()             # <<<<<<<<<<<<<<
- *       return
+ *         if type != b"CONNECT":
+ *             localWriter.close()             # <<<<<<<<<<<<<<
+ *             return
  * 
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localWriter, __pyx_n_s_close); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 53, __pyx_L1_error)
@@ -4924,30 +4924,30 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "c_proxyserver.py":54
- *     if type != b"CONNECT":
- *       localWriter.close()
- *       return             # <<<<<<<<<<<<<<
+ *         if type != b"CONNECT":
+ *             localWriter.close()
+ *             return             # <<<<<<<<<<<<<<
  * 
- *     localWriter.write(b'HTTP/1.1 200 OK\n\n')
+ *         localWriter.write(b'HTTP/1.1 200 OK\n\n')
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = NULL;
     goto __pyx_L0;
 
     /* "c_proxyserver.py":52
- *       return
+ *             return
  * 
- *     if type != b"CONNECT":             # <<<<<<<<<<<<<<
- *       localWriter.close()
- *       return
+ *         if type != b"CONNECT":             # <<<<<<<<<<<<<<
+ *             localWriter.close()
+ *             return
  */
   }
 
   /* "c_proxyserver.py":56
- *       return
+ *             return
  * 
- *     localWriter.write(b'HTTP/1.1 200 OK\n\n')             # <<<<<<<<<<<<<<
- *     await localWriter.drain()
+ *         localWriter.write(b'HTTP/1.1 200 OK\n\n')             # <<<<<<<<<<<<<<
+ *         await localWriter.drain()
  * 
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localWriter, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 56, __pyx_L1_error)
@@ -4978,10 +4978,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
   /* "c_proxyserver.py":57
  * 
- *     localWriter.write(b'HTTP/1.1 200 OK\n\n')
- *     await localWriter.drain()             # <<<<<<<<<<<<<<
+ *         localWriter.write(b'HTTP/1.1 200 OK\n\n')
+ *         await localWriter.drain()             # <<<<<<<<<<<<<<
  * 
- *     try:
+ *         try:
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localWriter, __pyx_n_s_drain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 57, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5028,11 +5028,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   }
 
   /* "c_proxyserver.py":59
- *     await localWriter.drain()
+ *         await localWriter.drain()
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       self.log.info(f'Try connect to {host}:{port}')
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         try:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Try connect to {host}:{port}')
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
  */
   {
     __Pyx_ExceptionSave(&__pyx_t_12, &__pyx_t_11, &__pyx_t_10);
@@ -5043,10 +5043,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
       /* "c_proxyserver.py":60
  * 
- *     try:
- *       self.log.info(f'Try connect to {host}:{port}')             # <<<<<<<<<<<<<<
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
- *     except:
+ *         try:
+ *             self.log.info(f'Try connect to {host}:{port}')             # <<<<<<<<<<<<<<
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         except:
  */
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 60, __pyx_L20_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -5108,11 +5108,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
       /* "c_proxyserver.py":61
- *     try:
- *       self.log.info(f'Try connect to {host}:{port}')
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)             # <<<<<<<<<<<<<<
- *     except:
- *       localWriter.close()
+ *         try:
+ *             self.log.info(f'Try connect to {host}:{port}')
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)             # <<<<<<<<<<<<<<
+ *         except:
+ *             localWriter.close()
  */
       __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 61, __pyx_L20_error)
       __Pyx_GOTREF(__pyx_t_3);
@@ -5228,11 +5228,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __pyx_t_3 = 0;
 
       /* "c_proxyserver.py":59
- *     await localWriter.drain()
+ *         await localWriter.drain()
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       self.log.info(f'Try connect to {host}:{port}')
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         try:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Try connect to {host}:{port}')
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
  */
     }
     __Pyx_XDECREF(__pyx_t_12); __pyx_t_12 = 0;
@@ -5248,11 +5248,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
 
     /* "c_proxyserver.py":62
- *       self.log.info(f'Try connect to {host}:{port}')
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
- *     except:             # <<<<<<<<<<<<<<
- *       localWriter.close()
- *       return
+ *             self.log.info(f'Try connect to {host}:{port}')
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         except:             # <<<<<<<<<<<<<<
+ *             localWriter.close()
+ *             return
  */
     /*except:*/ {
       __Pyx_AddTraceback("c_proxyserver.ProxyServer.connect", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -5262,10 +5262,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_XGOTREF(__pyx_t_2);
 
       /* "c_proxyserver.py":63
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
- *     except:
- *       localWriter.close()             # <<<<<<<<<<<<<<
- *       return
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         except:
+ *             localWriter.close()             # <<<<<<<<<<<<<<
+ *             return
  * 
  */
       __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localWriter, __pyx_n_s_close); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 63, __pyx_L22_except_error)
@@ -5295,11 +5295,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
       /* "c_proxyserver.py":64
- *     except:
- *       localWriter.close()
- *       return             # <<<<<<<<<<<<<<
+ *         except:
+ *             localWriter.close()
+ *             return             # <<<<<<<<<<<<<<
  * 
- *     self.start = timeit.default_timer()
+ *         self.start = timeit.default_timer()
  */
       __Pyx_XDECREF(__pyx_r);
       __pyx_r = NULL;
@@ -5310,11 +5310,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     }
 
     /* "c_proxyserver.py":59
- *     await localWriter.drain()
+ *         await localWriter.drain()
  * 
- *     try:             # <<<<<<<<<<<<<<
- *       self.log.info(f'Try connect to {host}:{port}')
- *       remote_reader, remote_writer = await asyncio.open_connection(host, port)
+ *         try:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Try connect to {host}:{port}')
+ *             remote_reader, remote_writer = await asyncio.open_connection(host, port)
  */
     __pyx_L22_except_error:;
     __Pyx_XGIVEREF(__pyx_t_12);
@@ -5332,11 +5332,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   }
 
   /* "c_proxyserver.py":66
- *       return
+ *             return
  * 
- *     self.start = timeit.default_timer()             # <<<<<<<<<<<<<<
- *     self.conns += 1
- *     self.globConns += self.conns
+ *         self.start = timeit.default_timer()             # <<<<<<<<<<<<<<
+ *         self.conns += 1
+ *         self.globConns += self.conns
  */
   __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_timeit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 66, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -5370,10 +5370,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
   /* "c_proxyserver.py":67
  * 
- *     self.start = timeit.default_timer()
- *     self.conns += 1             # <<<<<<<<<<<<<<
- *     self.globConns += self.conns
- *     if self.showLogs:
+ *         self.start = timeit.default_timer()
+ *         self.conns += 1             # <<<<<<<<<<<<<<
+ *         self.globConns += self.conns
+ *         if self.showLogs:
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_conns); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 67, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5384,11 +5384,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "c_proxyserver.py":68
- *     self.start = timeit.default_timer()
- *     self.conns += 1
- *     self.globConns += self.conns             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')
+ *         self.start = timeit.default_timer()
+ *         self.conns += 1
+ *         self.globConns += self.conns             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')
  */
   __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_globConns); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 68, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -5402,11 +5402,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "c_proxyserver.py":69
- *     self.conns += 1
- *     self.globConns += self.conns
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'localWriter: {localWriter}')
+ *         self.conns += 1
+ *         self.globConns += self.conns
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'localWriter: {localWriter}')
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 69, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -5415,11 +5415,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   if (__pyx_t_6) {
 
     /* "c_proxyserver.py":70
- *     self.globConns += self.conns
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')             # <<<<<<<<<<<<<<
- *       self.log.info(f'localWriter: {localWriter}')
- *     if port == b'443':
+ *         self.globConns += self.conns
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localWriter: {localWriter}')
+ *         if port == b'443':
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 70, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -5457,11 +5457,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":71
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'localWriter: {localWriter}')             # <<<<<<<<<<<<<<
- *     if port == b'443':
- *       await self.fragment(localReader, remote_writer)
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'localWriter: {localWriter}')             # <<<<<<<<<<<<<<
+ *         if port == b'443':
+ *             await self.fragment(localReader, remote_writer)
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 71, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -5499,30 +5499,30 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":69
- *     self.conns += 1
- *     self.globConns += self.conns
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'localWriter: {localWriter}')
+ *         self.conns += 1
+ *         self.globConns += self.conns
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'localWriter: {localWriter}')
  */
   }
 
   /* "c_proxyserver.py":72
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'localWriter: {localWriter}')
- *     if port == b'443':             # <<<<<<<<<<<<<<
- *       await self.fragment(localReader, remote_writer)
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'localWriter: {localWriter}')
+ *         if port == b'443':             # <<<<<<<<<<<<<<
+ *             await self.fragment(localReader, remote_writer)
  * 
  */
   __pyx_t_6 = (__Pyx_PyBytes_Equals(__pyx_cur_scope->__pyx_v_port, __pyx_kp_b_443, Py_EQ)); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 72, __pyx_L1_error)
   if (__pyx_t_6) {
 
     /* "c_proxyserver.py":73
- *       self.log.info(f'localWriter: {localWriter}')
- *     if port == b'443':
- *       await self.fragment(localReader, remote_writer)             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localWriter: {localWriter}')
+ *         if port == b'443':
+ *             await self.fragment(localReader, remote_writer)             # <<<<<<<<<<<<<<
  * 
- *     sender = asyncio.create_task(self.pipe(localReader, remote_writer))
+ *         sender = asyncio.create_task(self.pipe(localReader, remote_writer))
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_fragment); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 73, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -5569,20 +5569,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     }
 
     /* "c_proxyserver.py":72
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'localWriter: {localWriter}')
- *     if port == b'443':             # <<<<<<<<<<<<<<
- *       await self.fragment(localReader, remote_writer)
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'localWriter: {localWriter}')
+ *         if port == b'443':             # <<<<<<<<<<<<<<
+ *             await self.fragment(localReader, remote_writer)
  * 
  */
   }
 
   /* "c_proxyserver.py":75
- *       await self.fragment(localReader, remote_writer)
+ *             await self.fragment(localReader, remote_writer)
  * 
- *     sender = asyncio.create_task(self.pipe(localReader, remote_writer))             # <<<<<<<<<<<<<<
- *     receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
- *     if self.debug:
+ *         sender = asyncio.create_task(self.pipe(localReader, remote_writer))             # <<<<<<<<<<<<<<
+ *         receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
+ *         if self.debug:
  */
   __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 75, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -5642,10 +5642,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 
   /* "c_proxyserver.py":76
  * 
- *     sender = asyncio.create_task(self.pipe(localReader, remote_writer))
- *     receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))             # <<<<<<<<<<<<<<
- *     if self.debug:
- *       self.tasks.append(sender)
+ *         sender = asyncio.create_task(self.pipe(localReader, remote_writer))
+ *         receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))             # <<<<<<<<<<<<<<
+ *         if self.debug:
+ *             self.tasks.append(sender)
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 76, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -5704,11 +5704,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   __pyx_t_3 = 0;
 
   /* "c_proxyserver.py":77
- *     sender = asyncio.create_task(self.pipe(localReader, remote_writer))
- *     receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
- *     if self.debug:             # <<<<<<<<<<<<<<
- *       self.tasks.append(sender)
- *       self.tasks.append(receiver)
+ *         sender = asyncio.create_task(self.pipe(localReader, remote_writer))
+ *         receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
+ *         if self.debug:             # <<<<<<<<<<<<<<
+ *             self.tasks.append(sender)
+ *             self.tasks.append(receiver)
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_debug); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 77, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -5717,11 +5717,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
   if (__pyx_t_6) {
 
     /* "c_proxyserver.py":78
- *     receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
- *     if self.debug:
- *       self.tasks.append(sender)             # <<<<<<<<<<<<<<
- *       self.tasks.append(receiver)
- *       if self.showLogs:
+ *         receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
+ *         if self.debug:
+ *             self.tasks.append(sender)             # <<<<<<<<<<<<<<
+ *             self.tasks.append(receiver)
+ *             if self.showLogs:
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tasks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 78, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -5729,11 +5729,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":79
- *     if self.debug:
- *       self.tasks.append(sender)
- *       self.tasks.append(receiver)             # <<<<<<<<<<<<<<
- *       if self.showLogs:
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *         if self.debug:
+ *             self.tasks.append(sender)
+ *             self.tasks.append(receiver)             # <<<<<<<<<<<<<<
+ *             if self.showLogs:
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_tasks); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 79, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -5741,10 +5741,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":80
- *       self.tasks.append(sender)
- *       self.tasks.append(receiver)
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *             self.tasks.append(sender)
+ *             self.tasks.append(receiver)
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 80, __pyx_L1_error)
@@ -5754,11 +5754,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
     if (__pyx_t_6) {
 
       /* "c_proxyserver.py":81
- *       self.tasks.append(receiver)
- *       if self.showLogs:
- *         self.log.info(f'Tasks size: {len(self.tasks)}')             # <<<<<<<<<<<<<<
+ *             self.tasks.append(receiver)
+ *             if self.showLogs:
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')             # <<<<<<<<<<<<<<
  * 
- *   async def fragment(self, localReader, remoteWriter):
+ *     async def fragment(self, localReader, remoteWriter):
  */
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 81, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -5800,30 +5800,30 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
       /* "c_proxyserver.py":80
- *       self.tasks.append(sender)
- *       self.tasks.append(receiver)
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *             self.tasks.append(sender)
+ *             self.tasks.append(receiver)
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
  */
     }
 
     /* "c_proxyserver.py":77
- *     sender = asyncio.create_task(self.pipe(localReader, remote_writer))
- *     receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
- *     if self.debug:             # <<<<<<<<<<<<<<
- *       self.tasks.append(sender)
- *       self.tasks.append(receiver)
+ *         sender = asyncio.create_task(self.pipe(localReader, remote_writer))
+ *         receiver = asyncio.create_task(self.pipe(remote_reader, localWriter))
+ *         if self.debug:             # <<<<<<<<<<<<<<
+ *             self.tasks.append(sender)
+ *             self.tasks.append(receiver)
  */
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "c_proxyserver.py":40
- *     asyncio.run(self.main())
+ *         asyncio.run(self.main())
  * 
- *   async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
+ *     async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
  */
 
   /* function exit code */
@@ -5851,11 +5851,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_4generator(__pyx_Corouti
 static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "c_proxyserver.py":83
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
- *   async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
- *     self.datas += 1
- *     self.globDatas += self.datas
+ *     async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
+ *         self.datas += 1
+ *         self.globDatas += self.datas
  */
 
 /* Python wrapper */
@@ -6077,10 +6077,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
   /* "c_proxyserver.py":84
  * 
- *   async def fragment(self, localReader, remoteWriter):
- *     self.datas += 1             # <<<<<<<<<<<<<<
- *     self.globDatas += self.datas
- *     if self.showLogs:
+ *     async def fragment(self, localReader, remoteWriter):
+ *         self.datas += 1             # <<<<<<<<<<<<<<
+ *         self.globDatas += self.datas
+ *         if self.showLogs:
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_datas); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 84, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -6091,11 +6091,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "c_proxyserver.py":85
- *   async def fragment(self, localReader, remoteWriter):
- *     self.datas += 1
- *     self.globDatas += self.datas             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')
+ *     async def fragment(self, localReader, remoteWriter):
+ *         self.datas += 1
+ *         self.globDatas += self.datas             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_globDatas); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -6109,11 +6109,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "c_proxyserver.py":86
- *     self.datas += 1
- *     self.globDatas += self.datas
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')
+ *         self.datas += 1
+ *         self.globDatas += self.datas
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 86, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -6122,11 +6122,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   if (__pyx_t_4) {
 
     /* "c_proxyserver.py":87
- *     self.globDatas += self.datas
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')             # <<<<<<<<<<<<<<
- *       self.log.info(f'remoteWriter: {remoteWriter}')
- *     try:
+ *         self.globDatas += self.datas
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')             # <<<<<<<<<<<<<<
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
+ *         try:
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -6164,11 +6164,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":88
- *     if self.showLogs:
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')             # <<<<<<<<<<<<<<
- *     try:
- *       head = await localReader.read(5)
+ *         if self.showLogs:
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')             # <<<<<<<<<<<<<<
+ *         try:
+ *             head = await localReader.read(5)
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 88, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -6206,20 +6206,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":86
- *     self.datas += 1
- *     self.globDatas += self.datas
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')
+ *         self.datas += 1
+ *         self.globDatas += self.datas
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
  */
   }
 
   /* "c_proxyserver.py":89
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')
- *     try:             # <<<<<<<<<<<<<<
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
+ *         try:             # <<<<<<<<<<<<<<
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)
  */
   {
     __Pyx_ExceptionSave(&__pyx_t_7, &__pyx_t_8, &__pyx_t_9);
@@ -6229,11 +6229,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     /*try:*/ {
 
       /* "c_proxyserver.py":90
- *       self.log.info(f'remoteWriter: {remoteWriter}')
- *     try:
- *       head = await localReader.read(5)             # <<<<<<<<<<<<<<
- *       data = await localReader.read(self.bufferSize)
- *       if self.showLogs:
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
+ *         try:
+ *             head = await localReader.read(5)             # <<<<<<<<<<<<<<
+ *             data = await localReader.read(self.bufferSize)
+ *             if self.showLogs:
  */
       __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localReader, __pyx_n_s_read); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 90, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_5);
@@ -6297,11 +6297,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       __pyx_t_3 = 0;
 
       /* "c_proxyserver.py":91
- *     try:
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)             # <<<<<<<<<<<<<<
- *       if self.showLogs:
- *         self.log.info('=' * 100)
+ *         try:
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)             # <<<<<<<<<<<<<<
+ *             if self.showLogs:
+ *                 self.log.info('=' * 100)
  */
       __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localReader, __pyx_n_s_read); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 91, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_5);
@@ -6368,11 +6368,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       __pyx_t_3 = 0;
 
       /* "c_proxyserver.py":92
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info('=' * 100)
- *         self.log.info(f'Header: {head}')
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info('=' * 100)
+ *                 self.log.info(f'Header: {head}')
  */
       __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 92, __pyx_L5_error)
       __Pyx_GOTREF(__pyx_t_3);
@@ -6381,11 +6381,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       if (__pyx_t_4) {
 
         /* "c_proxyserver.py":93
- *       data = await localReader.read(self.bufferSize)
- *       if self.showLogs:
- *         self.log.info('=' * 100)             # <<<<<<<<<<<<<<
- *         self.log.info(f'Header: {head}')
- *         self.log.info(f'Data ({len(data)}): {data}')
+ *             data = await localReader.read(self.bufferSize)
+ *             if self.showLogs:
+ *                 self.log.info('=' * 100)             # <<<<<<<<<<<<<<
+ *                 self.log.info(f'Header: {head}')
+ *                 self.log.info(f'Data ({len(data)}): {data}')
  */
         __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 93, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -6417,11 +6417,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
         /* "c_proxyserver.py":94
- *       if self.showLogs:
- *         self.log.info('=' * 100)
- *         self.log.info(f'Header: {head}')             # <<<<<<<<<<<<<<
- *         self.log.info(f'Data ({len(data)}): {data}')
- *     except Exception as e:
+ *             if self.showLogs:
+ *                 self.log.info('=' * 100)
+ *                 self.log.info(f'Header: {head}')             # <<<<<<<<<<<<<<
+ *                 self.log.info(f'Data ({len(data)}): {data}')
+ *         except Exception as e:
  */
         __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 94, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_1);
@@ -6459,11 +6459,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
         /* "c_proxyserver.py":95
- *         self.log.info('=' * 100)
- *         self.log.info(f'Header: {head}')
- *         self.log.info(f'Data ({len(data)}): {data}')             # <<<<<<<<<<<<<<
- *     except Exception as e:
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')
+ *                 self.log.info('=' * 100)
+ *                 self.log.info(f'Header: {head}')
+ *                 self.log.info(f'Data ({len(data)}): {data}')             # <<<<<<<<<<<<<<
+ *         except Exception as e:
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')
  */
         __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 95, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -6525,20 +6525,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
         /* "c_proxyserver.py":92
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info('=' * 100)
- *         self.log.info(f'Header: {head}')
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info('=' * 100)
+ *                 self.log.info(f'Header: {head}')
  */
       }
 
       /* "c_proxyserver.py":89
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')
- *     try:             # <<<<<<<<<<<<<<
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
+ *         try:             # <<<<<<<<<<<<<<
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)
  */
     }
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -6552,11 +6552,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "c_proxyserver.py":96
- *         self.log.info(f'Header: {head}')
- *         self.log.info(f'Data ({len(data)}): {data}')
- *     except Exception as e:             # <<<<<<<<<<<<<<
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')
- *       localReader.close()
+ *                 self.log.info(f'Header: {head}')
+ *                 self.log.info(f'Data ({len(data)}): {data}')
+ *         except Exception as e:             # <<<<<<<<<<<<<<
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')
+ *             localReader.close()
  */
     __pyx_t_13 = __Pyx_PyErr_ExceptionMatches(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])));
     if (__pyx_t_13) {
@@ -6571,11 +6571,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       /*try:*/ {
 
         /* "c_proxyserver.py":97
- *         self.log.info(f'Data ({len(data)}): {data}')
- *     except Exception as e:
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')             # <<<<<<<<<<<<<<
- *       localReader.close()
- *       return
+ *                 self.log.info(f'Data ({len(data)}): {data}')
+ *         except Exception as e:
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')             # <<<<<<<<<<<<<<
+ *             localReader.close()
+ *             return
  */
         __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 97, __pyx_L19_error)
         __Pyx_GOTREF(__pyx_t_14);
@@ -6613,11 +6613,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
         /* "c_proxyserver.py":98
- *     except Exception as e:
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')
- *       localReader.close()             # <<<<<<<<<<<<<<
- *       return
- *     parts:list = list()
+ *         except Exception as e:
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')
+ *             localReader.close()             # <<<<<<<<<<<<<<
+ *             return
+ *         parts:list = list()
  */
         __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_localReader, __pyx_n_s_close); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 98, __pyx_L19_error)
         __Pyx_GOTREF(__pyx_t_15);
@@ -6646,10 +6646,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
         /* "c_proxyserver.py":99
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')
- *       localReader.close()
- *       return             # <<<<<<<<<<<<<<
- *     parts:list = list()
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')
+ *             localReader.close()
+ *             return             # <<<<<<<<<<<<<<
+ *         parts:list = list()
  * 
  */
         __Pyx_XDECREF(__pyx_r);
@@ -6661,11 +6661,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       }
 
       /* "c_proxyserver.py":96
- *         self.log.info(f'Header: {head}')
- *         self.log.info(f'Data ({len(data)}): {data}')
- *     except Exception as e:             # <<<<<<<<<<<<<<
- *       self.log.warn(f'[NON-CRITICAL ERROR] {e}')
- *       localReader.close()
+ *                 self.log.info(f'Header: {head}')
+ *                 self.log.info(f'Data ({len(data)}): {data}')
+ *         except Exception as e:             # <<<<<<<<<<<<<<
+ *             self.log.warn(f'[NON-CRITICAL ERROR] {e}')
+ *             localReader.close()
  */
       /*finally:*/ {
         __pyx_L19_error:;
@@ -6738,11 +6738,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     goto __pyx_L7_except_error;
 
     /* "c_proxyserver.py":89
- *       self.log.info(f'localReader: {localReader}')
- *       self.log.info(f'remoteWriter: {remoteWriter}')
- *     try:             # <<<<<<<<<<<<<<
- *       head = await localReader.read(5)
- *       data = await localReader.read(self.bufferSize)
+ *             self.log.info(f'localReader: {localReader}')
+ *             self.log.info(f'remoteWriter: {remoteWriter}')
+ *         try:             # <<<<<<<<<<<<<<
+ *             head = await localReader.read(5)
+ *             data = await localReader.read(self.bufferSize)
  */
     __pyx_L7_except_error:;
     __Pyx_XGIVEREF(__pyx_t_7);
@@ -6760,11 +6760,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   }
 
   /* "c_proxyserver.py":100
- *       localReader.close()
- *       return
- *     parts:list = list()             # <<<<<<<<<<<<<<
+ *             localReader.close()
+ *             return
+ *         parts:list = list()             # <<<<<<<<<<<<<<
  * 
- *     blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
+ *         blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
  */
   __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 100, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -6773,11 +6773,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":102
- *     parts:list = list()
+ *         parts:list = list()
  * 
- *     blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]             # <<<<<<<<<<<<<<
- *     if all([data.find(site) == -1 for site in blocked]):
- *       remoteWriter.write(head + data)
+ *         blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]             # <<<<<<<<<<<<<<
+ *         if all([data.find(site) == -1 for site in blocked]):
+ *             remoteWriter.write(head + data)
  */
   { /* enter inner scope */
     __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 102, __pyx_L1_error)
@@ -6916,10 +6916,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
   /* "c_proxyserver.py":103
  * 
- *     blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
- *     if all([data.find(site) == -1 for site in blocked]):             # <<<<<<<<<<<<<<
- *       remoteWriter.write(head + data)
- *       await remoteWriter.drain()
+ *         blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
+ *         if all([data.find(site) == -1 for site in blocked]):             # <<<<<<<<<<<<<<
+ *             remoteWriter.write(head + data)
+ *             await remoteWriter.drain()
  */
   { /* enter inner scope */
     __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 103, __pyx_L1_error)
@@ -6984,11 +6984,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   if (__pyx_t_4) {
 
     /* "c_proxyserver.py":104
- *     blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
- *     if all([data.find(site) == -1 for site in blocked]):
- *       remoteWriter.write(head + data)             # <<<<<<<<<<<<<<
- *       await remoteWriter.drain()
- *       return
+ *         blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
+ *         if all([data.find(site) == -1 for site in blocked]):
+ *             remoteWriter.write(head + data)             # <<<<<<<<<<<<<<
+ *             await remoteWriter.drain()
+ *             return
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_remoteWriter, __pyx_n_s_write); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 104, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7020,10 +7020,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "c_proxyserver.py":105
- *     if all([data.find(site) == -1 for site in blocked]):
- *       remoteWriter.write(head + data)
- *       await remoteWriter.drain()             # <<<<<<<<<<<<<<
- *       return
+ *         if all([data.find(site) == -1 for site in blocked]):
+ *             remoteWriter.write(head + data)
+ *             await remoteWriter.drain()             # <<<<<<<<<<<<<<
+ *             return
  * 
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_remoteWriter, __pyx_n_s_drain); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 105, __pyx_L1_error)
@@ -7071,11 +7071,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     }
 
     /* "c_proxyserver.py":106
- *       remoteWriter.write(head + data)
- *       await remoteWriter.drain()
- *       return             # <<<<<<<<<<<<<<
+ *             remoteWriter.write(head + data)
+ *             await remoteWriter.drain()
+ *             return             # <<<<<<<<<<<<<<
  * 
- *     host_end_index = data.find(b"\x00")
+ *         host_end_index = data.find(b"\x00")
  */
     __Pyx_XDECREF(__pyx_r);
     __pyx_r = NULL;
@@ -7083,19 +7083,19 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
     /* "c_proxyserver.py":103
  * 
- *     blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
- *     if all([data.find(site) == -1 for site in blocked]):             # <<<<<<<<<<<<<<
- *       remoteWriter.write(head + data)
- *       await remoteWriter.drain()
+ *         blocked:list = [line.rstrip().encode() for line in open(self.blockedlistFile, 'r', encoding='utf-8')]
+ *         if all([data.find(site) == -1 for site in blocked]):             # <<<<<<<<<<<<<<
+ *             remoteWriter.write(head + data)
+ *             await remoteWriter.drain()
  */
   }
 
   /* "c_proxyserver.py":108
- *       return
+ *             return
  * 
- *     host_end_index = data.find(b"\x00")             # <<<<<<<<<<<<<<
- *     if host_end_index != -1:
- *       parts.append(bytes.fromhex("1603")
+ *         host_end_index = data.find(b"\x00")             # <<<<<<<<<<<<<<
+ *         if host_end_index != -1:
+ *             parts.append(bytes.fromhex("1603")
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_data, __pyx_n_s_find); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 108, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -7127,20 +7127,20 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
   /* "c_proxyserver.py":109
  * 
- *     host_end_index = data.find(b"\x00")
- *     if host_end_index != -1:             # <<<<<<<<<<<<<<
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])
+ *         host_end_index = data.find(b"\x00")
+ *         if host_end_index != -1:             # <<<<<<<<<<<<<<
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])
  */
   __pyx_t_4 = (__Pyx_PyInt_BoolNeObjC(__pyx_cur_scope->__pyx_v_host_end_index, __pyx_int_neg_1, -1L, 0)); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 109, __pyx_L1_error)
   if (__pyx_t_4) {
 
     /* "c_proxyserver.py":110
- *     host_end_index = data.find(b"\x00")
- *     if host_end_index != -1:
- *       parts.append(bytes.fromhex("1603")             # <<<<<<<<<<<<<<
- *                    + bytes([random.randint(0, 255)])
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *         host_end_index = data.find(b"\x00")
+ *         if host_end_index != -1:
+ *             parts.append(bytes.fromhex("1603")             # <<<<<<<<<<<<<<
+ *                          + bytes([random.randint(0, 255)])
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyBytes_Type)), __pyx_n_s_fromhex); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 110, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7168,11 +7168,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     }
 
     /* "c_proxyserver.py":111
- *     if host_end_index != -1:
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])             # <<<<<<<<<<<<<<
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
- *                    + data[: host_end_index + 1])
+ *         if host_end_index != -1:
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])             # <<<<<<<<<<<<<<
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *                          + data[: host_end_index + 1])
  */
     __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_random); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 111, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7196,11 +7196,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "c_proxyserver.py":112
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")             # <<<<<<<<<<<<<<
- *                    + data[: host_end_index + 1])
- *       data = data[host_end_index + 1:]
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")             # <<<<<<<<<<<<<<
+ *                          + data[: host_end_index + 1])
+ *             data = data[host_end_index + 1:]
  */
     __pyx_t_1 = __Pyx_PyInt_AddObjC(__pyx_cur_scope->__pyx_v_host_end_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 112, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7223,10 +7223,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "c_proxyserver.py":113
- *                    + bytes([random.randint(0, 255)])
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
- *                    + data[: host_end_index + 1])             # <<<<<<<<<<<<<<
- *       data = data[host_end_index + 1:]
+ *                          + bytes([random.randint(0, 255)])
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *                          + data[: host_end_index + 1])             # <<<<<<<<<<<<<<
+ *             data = data[host_end_index + 1:]
  * 
  */
     __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_cur_scope->__pyx_v_host_end_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 113, __pyx_L1_error)
@@ -7240,21 +7240,21 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
 
     /* "c_proxyserver.py":110
- *     host_end_index = data.find(b"\x00")
- *     if host_end_index != -1:
- *       parts.append(bytes.fromhex("1603")             # <<<<<<<<<<<<<<
- *                    + bytes([random.randint(0, 255)])
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *         host_end_index = data.find(b"\x00")
+ *         if host_end_index != -1:
+ *             parts.append(bytes.fromhex("1603")             # <<<<<<<<<<<<<<
+ *                          + bytes([random.randint(0, 255)])
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
  */
     __pyx_t_27 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_parts, __pyx_t_5); if (unlikely(__pyx_t_27 == ((int)-1))) __PYX_ERR(0, 110, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "c_proxyserver.py":114
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
- *                    + data[: host_end_index + 1])
- *       data = data[host_end_index + 1:]             # <<<<<<<<<<<<<<
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *                          + data[: host_end_index + 1])
+ *             data = data[host_end_index + 1:]             # <<<<<<<<<<<<<<
  * 
- *     while data:
+ *         while data:
  */
     __pyx_t_5 = __Pyx_PyInt_AddObjC(__pyx_cur_scope->__pyx_v_host_end_index, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 114, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -7268,19 +7268,19 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
     /* "c_proxyserver.py":109
  * 
- *     host_end_index = data.find(b"\x00")
- *     if host_end_index != -1:             # <<<<<<<<<<<<<<
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])
+ *         host_end_index = data.find(b"\x00")
+ *         if host_end_index != -1:             # <<<<<<<<<<<<<<
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])
  */
   }
 
   /* "c_proxyserver.py":116
- *       data = data[host_end_index + 1:]
+ *             data = data[host_end_index + 1:]
  * 
- *     while data:             # <<<<<<<<<<<<<<
- *       part_len = random.randint(1, len(data))
- *       chunk = (((bytes.fromhex("1603")
+ *         while data:             # <<<<<<<<<<<<<<
+ *             part_len = random.randint(1, len(data))
+ *             chunk = (((bytes.fromhex("1603")
  */
   while (1) {
     __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_data); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 116, __pyx_L1_error)
@@ -7288,10 +7288,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 
     /* "c_proxyserver.py":117
  * 
- *     while data:
- *       part_len = random.randint(1, len(data))             # <<<<<<<<<<<<<<
- *       chunk = (((bytes.fromhex("1603")
- *               + bytes([random.randint(0, 255)]))
+ *         while data:
+ *             part_len = random.randint(1, len(data))             # <<<<<<<<<<<<<<
+ *             chunk = (((bytes.fromhex("1603")
+ *                        + bytes([random.randint(0, 255)]))
  */
     __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_random); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 117, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -7330,11 +7330,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __pyx_t_15 = 0;
 
     /* "c_proxyserver.py":118
- *     while data:
- *       part_len = random.randint(1, len(data))
- *       chunk = (((bytes.fromhex("1603")             # <<<<<<<<<<<<<<
- *               + bytes([random.randint(0, 255)]))
- *               + int(part_len).to_bytes(2, byteorder="big"))
+ *         while data:
+ *             part_len = random.randint(1, len(data))
+ *             chunk = (((bytes.fromhex("1603")             # <<<<<<<<<<<<<<
+ *                        + bytes([random.randint(0, 255)]))
+ *                       + int(part_len).to_bytes(2, byteorder="big"))
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)(&PyBytes_Type)), __pyx_n_s_fromhex); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 118, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -7362,11 +7362,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     }
 
     /* "c_proxyserver.py":119
- *       part_len = random.randint(1, len(data))
- *       chunk = (((bytes.fromhex("1603")
- *               + bytes([random.randint(0, 255)]))             # <<<<<<<<<<<<<<
- *               + int(part_len).to_bytes(2, byteorder="big"))
- *               + data[0:part_len])
+ *             part_len = random.randint(1, len(data))
+ *             chunk = (((bytes.fromhex("1603")
+ *                        + bytes([random.randint(0, 255)]))             # <<<<<<<<<<<<<<
+ *                       + int(part_len).to_bytes(2, byteorder="big"))
+ *                      + data[0:part_len])
  */
     __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_random); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 119, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -7390,11 +7390,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "c_proxyserver.py":120
- *       chunk = (((bytes.fromhex("1603")
- *               + bytes([random.randint(0, 255)]))
- *               + int(part_len).to_bytes(2, byteorder="big"))             # <<<<<<<<<<<<<<
- *               + data[0:part_len])
- *       if self.showLogs:
+ *             chunk = (((bytes.fromhex("1603")
+ *                        + bytes([random.randint(0, 255)]))
+ *                       + int(part_len).to_bytes(2, byteorder="big"))             # <<<<<<<<<<<<<<
+ *                      + data[0:part_len])
+ *             if self.showLogs:
  */
     __pyx_t_2 = __Pyx_PyNumber_Int(__pyx_cur_scope->__pyx_v_part_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 120, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -7414,11 +7414,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "c_proxyserver.py":121
- *               + bytes([random.randint(0, 255)]))
- *               + int(part_len).to_bytes(2, byteorder="big"))
- *               + data[0:part_len])             # <<<<<<<<<<<<<<
- *       if self.showLogs:
- *         self.log.info('')
+ *                        + bytes([random.randint(0, 255)]))
+ *                       + int(part_len).to_bytes(2, byteorder="big"))
+ *                      + data[0:part_len])             # <<<<<<<<<<<<<<
+ *             if self.showLogs:
+ *                 self.log.info('')
  */
     __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_data, 0, 0, NULL, &__pyx_cur_scope->__pyx_v_part_len, NULL, 1, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7432,11 +7432,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __pyx_t_5 = 0;
 
     /* "c_proxyserver.py":122
- *               + int(part_len).to_bytes(2, byteorder="big"))
- *               + data[0:part_len])
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info('')
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')
+ *                       + int(part_len).to_bytes(2, byteorder="big"))
+ *                      + data[0:part_len])
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info('')
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')
  */
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 122, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -7445,11 +7445,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     if (__pyx_t_4) {
 
       /* "c_proxyserver.py":123
- *               + data[0:part_len])
- *       if self.showLogs:
- *         self.log.info('')             # <<<<<<<<<<<<<<
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')
- *       parts.append(chunk)
+ *                      + data[0:part_len])
+ *             if self.showLogs:
+ *                 self.log.info('')             # <<<<<<<<<<<<<<
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')
+ *             parts.append(chunk)
  */
       __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 123, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
@@ -7481,11 +7481,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
       /* "c_proxyserver.py":124
- *       if self.showLogs:
- *         self.log.info('')
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')             # <<<<<<<<<<<<<<
- *       parts.append(chunk)
- *       data = data[part_len:]
+ *             if self.showLogs:
+ *                 self.log.info('')
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')             # <<<<<<<<<<<<<<
+ *             parts.append(chunk)
+ *             data = data[part_len:]
  */
       __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 124, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
@@ -7547,29 +7547,29 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
       /* "c_proxyserver.py":122
- *               + int(part_len).to_bytes(2, byteorder="big"))
- *               + data[0:part_len])
- *       if self.showLogs:             # <<<<<<<<<<<<<<
- *         self.log.info('')
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')
+ *                       + int(part_len).to_bytes(2, byteorder="big"))
+ *                      + data[0:part_len])
+ *             if self.showLogs:             # <<<<<<<<<<<<<<
+ *                 self.log.info('')
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')
  */
     }
 
     /* "c_proxyserver.py":125
- *         self.log.info('')
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')
- *       parts.append(chunk)             # <<<<<<<<<<<<<<
- *       data = data[part_len:]
- *     self.chunks += len(parts)
+ *                 self.log.info('')
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')
+ *             parts.append(chunk)             # <<<<<<<<<<<<<<
+ *             data = data[part_len:]
+ *         self.chunks += len(parts)
  */
     __pyx_t_27 = __Pyx_PyList_Append(__pyx_cur_scope->__pyx_v_parts, __pyx_cur_scope->__pyx_v_chunk); if (unlikely(__pyx_t_27 == ((int)-1))) __PYX_ERR(0, 125, __pyx_L1_error)
 
     /* "c_proxyserver.py":126
- *         self.log.info(f'Chunk ({len(chunk)}): {chunk}')
- *       parts.append(chunk)
- *       data = data[part_len:]             # <<<<<<<<<<<<<<
- *     self.chunks += len(parts)
- *     self.globChunks += self.chunks
+ *                 self.log.info(f'Chunk ({len(chunk)}): {chunk}')
+ *             parts.append(chunk)
+ *             data = data[part_len:]             # <<<<<<<<<<<<<<
+ *         self.chunks += len(parts)
+ *         self.globChunks += self.chunks
  */
     __pyx_t_5 = __Pyx_PyObject_GetSlice(__pyx_cur_scope->__pyx_v_data, 0, 0, &__pyx_cur_scope->__pyx_v_part_len, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 126, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -7580,11 +7580,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   }
 
   /* "c_proxyserver.py":127
- *       parts.append(chunk)
- *       data = data[part_len:]
- *     self.chunks += len(parts)             # <<<<<<<<<<<<<<
- *     self.globChunks += self.chunks
- *     resultData = b''.join(parts)
+ *             parts.append(chunk)
+ *             data = data[part_len:]
+ *         self.chunks += len(parts)             # <<<<<<<<<<<<<<
+ *         self.globChunks += self.chunks
+ *         resultData = b''.join(parts)
  */
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_chunks); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 127, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -7599,11 +7599,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
 
   /* "c_proxyserver.py":128
- *       data = data[part_len:]
- *     self.chunks += len(parts)
- *     self.globChunks += self.chunks             # <<<<<<<<<<<<<<
- *     resultData = b''.join(parts)
- *     if self.showLogs:
+ *             data = data[part_len:]
+ *         self.chunks += len(parts)
+ *         self.globChunks += self.chunks             # <<<<<<<<<<<<<<
+ *         resultData = b''.join(parts)
+ *         if self.showLogs:
  */
   __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_globChunks); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
@@ -7617,11 +7617,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "c_proxyserver.py":129
- *     self.chunks += len(parts)
- *     self.globChunks += self.chunks
- *     resultData = b''.join(parts)             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')
+ *         self.chunks += len(parts)
+ *         self.globChunks += self.chunks
+ *         resultData = b''.join(parts)             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')
  */
   __pyx_t_5 = __Pyx_PyBytes_Join(__pyx_kp_b__13, __pyx_cur_scope->__pyx_v_parts); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -7630,11 +7630,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __pyx_t_5 = 0;
 
   /* "c_proxyserver.py":130
- *     self.globChunks += self.chunks
- *     resultData = b''.join(parts)
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')
- *     remoteWriter.write(resultData)
+ *         self.globChunks += self.chunks
+ *         resultData = b''.join(parts)
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')
+ *         remoteWriter.write(resultData)
  */
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 130, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -7643,11 +7643,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   if (__pyx_t_4) {
 
     /* "c_proxyserver.py":131
- *     resultData = b''.join(parts)
- *     if self.showLogs:
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')             # <<<<<<<<<<<<<<
- *     remoteWriter.write(resultData)
- *     await remoteWriter.drain()
+ *         resultData = b''.join(parts)
+ *         if self.showLogs:
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')             # <<<<<<<<<<<<<<
+ *         remoteWriter.write(resultData)
+ *         await remoteWriter.drain()
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 131, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -7709,19 +7709,19 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
     /* "c_proxyserver.py":130
- *     self.globChunks += self.chunks
- *     resultData = b''.join(parts)
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')
- *     remoteWriter.write(resultData)
+ *         self.globChunks += self.chunks
+ *         resultData = b''.join(parts)
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')
+ *         remoteWriter.write(resultData)
  */
   }
 
   /* "c_proxyserver.py":132
- *     if self.showLogs:
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')
- *     remoteWriter.write(resultData)             # <<<<<<<<<<<<<<
- *     await remoteWriter.drain()
+ *         if self.showLogs:
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')
+ *         remoteWriter.write(resultData)             # <<<<<<<<<<<<<<
+ *         await remoteWriter.drain()
  * 
  */
   __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_remoteWriter, __pyx_n_s_write); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 132, __pyx_L1_error)
@@ -7751,11 +7751,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
   /* "c_proxyserver.py":133
- *       self.log.info(f'Result data ({len(resultData)}): {resultData}')
- *     remoteWriter.write(resultData)
- *     await remoteWriter.drain()             # <<<<<<<<<<<<<<
+ *             self.log.info(f'Result data ({len(resultData)}): {resultData}')
+ *         remoteWriter.write(resultData)
+ *         await remoteWriter.drain()             # <<<<<<<<<<<<<<
  * 
- *   async def pipe(self, reader, writer):
+ *     async def pipe(self, reader, writer):
  */
   __pyx_t_15 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_remoteWriter, __pyx_n_s_drain); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 133, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
@@ -7803,11 +7803,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "c_proxyserver.py":83
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
- *   async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
- *     self.datas += 1
- *     self.globDatas += self.datas
+ *     async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
+ *         self.datas += 1
+ *         self.globDatas += self.datas
  */
 
   /* function exit code */
@@ -7836,11 +7836,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_7generator1(__pyx_Corout
 static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "c_proxyserver.py":135
- *     await remoteWriter.drain()
+ *         await remoteWriter.drain()
  * 
- *   async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
+ *     async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
  */
 
 /* Python wrapper */
@@ -8048,10 +8048,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
 
   /* "c_proxyserver.py":136
  * 
- *   async def pipe(self, reader, writer):
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'reader: {reader}')
- *       self.log.info(f'writer: {writer}')
+ *     async def pipe(self, reader, writer):
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'reader: {reader}')
+ *             self.log.info(f'writer: {writer}')
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showLogs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 136, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -8060,11 +8060,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
   if (__pyx_t_2) {
 
     /* "c_proxyserver.py":137
- *   async def pipe(self, reader, writer):
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')             # <<<<<<<<<<<<<<
- *       self.log.info(f'writer: {writer}')
- *     while not reader.at_eof() and not writer.is_closing():
+ *     async def pipe(self, reader, writer):
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')             # <<<<<<<<<<<<<<
+ *             self.log.info(f'writer: {writer}')
+ *         while not reader.at_eof() and not writer.is_closing():
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 137, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -8102,11 +8102,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "c_proxyserver.py":138
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
- *       self.log.info(f'writer: {writer}')             # <<<<<<<<<<<<<<
- *     while not reader.at_eof() and not writer.is_closing():
- *       try:
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
+ *             self.log.info(f'writer: {writer}')             # <<<<<<<<<<<<<<
+ *         while not reader.at_eof() and not writer.is_closing():
+ *             try:
  */
     __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 138, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
@@ -8145,19 +8145,19 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
 
     /* "c_proxyserver.py":136
  * 
- *   async def pipe(self, reader, writer):
- *     if self.showLogs:             # <<<<<<<<<<<<<<
- *       self.log.info(f'reader: {reader}')
- *       self.log.info(f'writer: {writer}')
+ *     async def pipe(self, reader, writer):
+ *         if self.showLogs:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'reader: {reader}')
+ *             self.log.info(f'writer: {writer}')
  */
   }
 
   /* "c_proxyserver.py":139
- *       self.log.info(f'reader: {reader}')
- *       self.log.info(f'writer: {writer}')
- *     while not reader.at_eof() and not writer.is_closing():             # <<<<<<<<<<<<<<
- *       try:
- *         writer.write(await reader.read(self.bufferSize))
+ *             self.log.info(f'reader: {reader}')
+ *             self.log.info(f'writer: {writer}')
+ *         while not reader.at_eof() and not writer.is_closing():             # <<<<<<<<<<<<<<
+ *             try:
+ *                 writer.write(await reader.read(self.bufferSize))
  */
   while (1) {
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_reader, __pyx_n_s_at_eof); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 139, __pyx_L1_error)
@@ -8224,11 +8224,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
     if (!__pyx_t_2) break;
 
     /* "c_proxyserver.py":140
- *       self.log.info(f'writer: {writer}')
- *     while not reader.at_eof() and not writer.is_closing():
- *       try:             # <<<<<<<<<<<<<<
- *         writer.write(await reader.read(self.bufferSize))
- *         await writer.drain()
+ *             self.log.info(f'writer: {writer}')
+ *         while not reader.at_eof() and not writer.is_closing():
+ *             try:             # <<<<<<<<<<<<<<
+ *                 writer.write(await reader.read(self.bufferSize))
+ *                 await writer.drain()
  */
     {
       __Pyx_ExceptionSave(&__pyx_t_9, &__pyx_t_10, &__pyx_t_11);
@@ -8238,11 +8238,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
       /*try:*/ {
 
         /* "c_proxyserver.py":141
- *     while not reader.at_eof() and not writer.is_closing():
- *       try:
- *         writer.write(await reader.read(self.bufferSize))             # <<<<<<<<<<<<<<
- *         await writer.drain()
- *       except:
+ *         while not reader.at_eof() and not writer.is_closing():
+ *             try:
+ *                 writer.write(await reader.read(self.bufferSize))             # <<<<<<<<<<<<<<
+ *                 await writer.drain()
+ *             except:
  */
         __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_writer, __pyx_n_s_write); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 141, __pyx_L9_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -8342,11 +8342,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
         /* "c_proxyserver.py":142
- *       try:
- *         writer.write(await reader.read(self.bufferSize))
- *         await writer.drain()             # <<<<<<<<<<<<<<
- *       except:
- *         break
+ *             try:
+ *                 writer.write(await reader.read(self.bufferSize))
+ *                 await writer.drain()             # <<<<<<<<<<<<<<
+ *             except:
+ *                 break
  */
         __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_writer, __pyx_n_s_drain); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 142, __pyx_L9_error)
         __Pyx_GOTREF(__pyx_t_5);
@@ -8408,11 +8408,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
         }
 
         /* "c_proxyserver.py":140
- *       self.log.info(f'writer: {writer}')
- *     while not reader.at_eof() and not writer.is_closing():
- *       try:             # <<<<<<<<<<<<<<
- *         writer.write(await reader.read(self.bufferSize))
- *         await writer.drain()
+ *             self.log.info(f'writer: {writer}')
+ *         while not reader.at_eof() and not writer.is_closing():
+ *             try:             # <<<<<<<<<<<<<<
+ *                 writer.write(await reader.read(self.bufferSize))
+ *                 await writer.drain()
  */
       }
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
@@ -8428,11 +8428,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
 
       /* "c_proxyserver.py":143
- *         writer.write(await reader.read(self.bufferSize))
- *         await writer.drain()
- *       except:             # <<<<<<<<<<<<<<
- *         break
- *     writer.close()
+ *                 writer.write(await reader.read(self.bufferSize))
+ *                 await writer.drain()
+ *             except:             # <<<<<<<<<<<<<<
+ *                 break
+ *         writer.close()
  */
       /*except:*/ {
         __Pyx_AddTraceback("c_proxyserver.ProxyServer.pipe", __pyx_clineno, __pyx_lineno, __pyx_filename);
@@ -8442,11 +8442,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
         __Pyx_XGOTREF(__pyx_t_3);
 
         /* "c_proxyserver.py":144
- *         await writer.drain()
- *       except:
- *         break             # <<<<<<<<<<<<<<
- *     writer.close()
- *     if self.showStats:
+ *                 await writer.drain()
+ *             except:
+ *                 break             # <<<<<<<<<<<<<<
+ *         writer.close()
+ *         if self.showStats:
  */
         goto __pyx_L20_except_break;
         __pyx_L20_except_break:;
@@ -8457,11 +8457,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
       }
 
       /* "c_proxyserver.py":140
- *       self.log.info(f'writer: {writer}')
- *     while not reader.at_eof() and not writer.is_closing():
- *       try:             # <<<<<<<<<<<<<<
- *         writer.write(await reader.read(self.bufferSize))
- *         await writer.drain()
+ *             self.log.info(f'writer: {writer}')
+ *         while not reader.at_eof() and not writer.is_closing():
+ *             try:             # <<<<<<<<<<<<<<
+ *                 writer.write(await reader.read(self.bufferSize))
+ *                 await writer.drain()
  */
       __pyx_L11_except_error:;
       __Pyx_XGIVEREF(__pyx_t_9);
@@ -8481,11 +8481,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
   __pyx_L6_break:;
 
   /* "c_proxyserver.py":145
- *       except:
- *         break
- *     writer.close()             # <<<<<<<<<<<<<<
- *     if self.showStats:
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
+ *             except:
+ *                 break
+ *         writer.close()             # <<<<<<<<<<<<<<
+ *         if self.showStats:
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
  */
   __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_writer, __pyx_n_s_close); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 145, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
@@ -8514,11 +8514,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "c_proxyserver.py":146
- *         break
- *     writer.close()
- *     if self.showStats:             # <<<<<<<<<<<<<<
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
+ *                 break
+ *         writer.close()
+ *         if self.showStats:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_showStats); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 146, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -8527,11 +8527,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
   if (__pyx_t_2) {
 
     /* "c_proxyserver.py":147
- *     writer.close()
- *     if self.showStats:
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')             # <<<<<<<<<<<<<<
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
- *     self.conns:int = 0
+ *         writer.close()
+ *         if self.showStats:
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')             # <<<<<<<<<<<<<<
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
+ *         self.conns:int = 0
  */
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 147, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -8658,11 +8658,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":148
- *     if self.showStats:
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')             # <<<<<<<<<<<<<<
- *     self.conns:int = 0
- *     self.datas:int = 0
+ *         if self.showStats:
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')             # <<<<<<<<<<<<<<
+ *         self.conns:int = 0
+ *         self.datas:int = 0
  */
     __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
@@ -8744,48 +8744,48 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "c_proxyserver.py":146
- *         break
- *     writer.close()
- *     if self.showStats:             # <<<<<<<<<<<<<<
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
+ *                 break
+ *         writer.close()
+ *         if self.showStats:             # <<<<<<<<<<<<<<
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
  */
   }
 
   /* "c_proxyserver.py":149
- *       self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
- *     self.conns:int = 0             # <<<<<<<<<<<<<<
- *     self.datas:int = 0
- *     self.chunks:int = 0
+ *             self.log.info(f'({timeit.default_timer() - self.start}s) Conns: {self.conns}, Datas: {self.datas}, Chunks: {self.chunks}')
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
+ *         self.conns:int = 0             # <<<<<<<<<<<<<<
+ *         self.datas:int = 0
+ *         self.chunks:int = 0
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_conns, __pyx_int_0) < 0) __PYX_ERR(0, 149, __pyx_L1_error)
 
   /* "c_proxyserver.py":150
- *       self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
- *     self.conns:int = 0
- *     self.datas:int = 0             # <<<<<<<<<<<<<<
- *     self.chunks:int = 0
+ *             self.log.info(f'[GLOB] Conns: {self.globConns}, Datas: {self.globDatas}, Chunks: {self.globChunks}')
+ *         self.conns:int = 0
+ *         self.datas:int = 0             # <<<<<<<<<<<<<<
+ *         self.chunks:int = 0
  * 
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_datas, __pyx_int_0) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
 
   /* "c_proxyserver.py":151
- *     self.conns:int = 0
- *     self.datas:int = 0
- *     self.chunks:int = 0             # <<<<<<<<<<<<<<
+ *         self.conns:int = 0
+ *         self.datas:int = 0
+ *         self.chunks:int = 0             # <<<<<<<<<<<<<<
  * 
- *   async def main(self):
+ *     async def main(self):
  */
   if (__Pyx_PyObject_SetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_chunks, __pyx_int_0) < 0) __PYX_ERR(0, 151, __pyx_L1_error)
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "c_proxyserver.py":135
- *     await remoteWriter.drain()
+ *         await remoteWriter.drain()
  * 
- *   async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
+ *     async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
  */
 
   /* function exit code */
@@ -8813,11 +8813,11 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_10generator2(__pyx_Corou
 static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
 /* "c_proxyserver.py":153
- *     self.chunks:int = 0
+ *         self.chunks:int = 0
  * 
- *   async def main(self):             # <<<<<<<<<<<<<<
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
+ *     async def main(self):             # <<<<<<<<<<<<<<
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
  */
 
 /* Python wrapper */
@@ -8964,7 +8964,8 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   PyObject *__pyx_t_6 = NULL;
   unsigned int __pyx_t_7;
   Py_ssize_t __pyx_t_8;
-  Py_UCS4 __pyx_t_9;
+  int __pyx_t_9;
+  Py_UCS4 __pyx_t_10;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -8983,10 +8984,10 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
 
   /* "c_proxyserver.py":154
  * 
- *   async def main(self):
- *     server = await asyncio.start_server(self.connect, self.host, self.port)             # <<<<<<<<<<<<<<
- *     seraverData = server.sockets[1].getsockname()
- *     self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')
+ *     async def main(self):
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)             # <<<<<<<<<<<<<<
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
+ *         # seraverData = server.sockets[1].getsockname()
  */
   __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_asyncio); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 154, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -9047,15 +9048,24 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   __pyx_t_1 = 0;
 
   /* "c_proxyserver.py":155
- *   async def main(self):
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()             # <<<<<<<<<<<<<<
- *     self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')
- *     await server.serve_forever()
+ *     async def main(self):
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()             # <<<<<<<<<<<<<<
+ *         # seraverData = server.sockets[1].getsockname()
+ *         self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')
  */
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_server, __pyx_n_s_sockets); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_host); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+  __pyx_t_9 = __Pyx_PyObject_IsTrue(__pyx_t_5); if (unlikely((__pyx_t_9 < 0))) __PYX_ERR(0, 155, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+  if (__pyx_t_9) {
+    __pyx_t_8 = 0;
+  } else {
+    __pyx_t_8 = 1;
+  }
+  __pyx_t_5 = __Pyx_GetItemInt(__pyx_t_3, __pyx_t_8, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_getsockname); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 155, __pyx_L1_error)
@@ -9087,31 +9097,31 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   __pyx_cur_scope->__pyx_v_seraverData = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "c_proxyserver.py":156
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
- *     self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')             # <<<<<<<<<<<<<<
- *     await server.serve_forever()
+  /* "c_proxyserver.py":157
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
+ *         # seraverData = server.sockets[1].getsockname()
+ *         self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')             # <<<<<<<<<<<<<<
+ *         await server.serve_forever()
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_log); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_info); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_info); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = PyTuple_New(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_8 = 0;
-  __pyx_t_9 = 127;
+  __pyx_t_10 = 127;
   __Pyx_INCREF(__pyx_kp_u_ProxyNoDPI_v);
   __pyx_t_8 += 12;
   __Pyx_GIVEREF(__pyx_kp_u_ProxyNoDPI_v);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_kp_u_ProxyNoDPI_v);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_version); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_version); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_9;
+  __pyx_t_10 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_10) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_10;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
@@ -9120,12 +9130,12 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   __pyx_t_8 += 2;
   __Pyx_GIVEREF(__pyx_kp_u__17);
   PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_kp_u__17);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_updated); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_updated); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_9;
+  __pyx_t_10 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_10) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_10;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_t_4);
@@ -9134,12 +9144,12 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   __pyx_t_8 += 12;
   __Pyx_GIVEREF(__pyx_kp_u_runned_on);
   PyTuple_SET_ITEM(__pyx_t_3, 4, __pyx_kp_u_runned_on);
-  __pyx_t_4 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_seraverData, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_seraverData, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_FormatSimple(__pyx_t_4, __pyx_empty_unicode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_9;
+  __pyx_t_10 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) > __pyx_t_10) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_2) : __pyx_t_10;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_3, 5, __pyx_t_2);
@@ -9148,17 +9158,17 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
   __pyx_t_8 += 1;
   __Pyx_GIVEREF(__pyx_kp_u__6);
   PyTuple_SET_ITEM(__pyx_t_3, 6, __pyx_kp_u__6);
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_seraverData, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_cur_scope->__pyx_v_seraverData, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_t_2, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_9 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_9) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_9;
+  __pyx_t_10 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_10) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_10;
   __pyx_t_8 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 7, __pyx_t_4);
   __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_3, 8, __pyx_t_8, __pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 156, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_3, 8, __pyx_t_8, __pyx_t_10); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -9180,18 +9190,18 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 1+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "c_proxyserver.py":157
- *     seraverData = server.sockets[1].getsockname()
- *     self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')
- *     await server.serve_forever()             # <<<<<<<<<<<<<<
+  /* "c_proxyserver.py":158
+ *         # seraverData = server.sockets[1].getsockname()
+ *         self.log.info(f'ProxyNoDPI v{__version__} ({__updated__}) runned on {seraverData[0]}:{seraverData[1]}')
+ *         await server.serve_forever()             # <<<<<<<<<<<<<<
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_server, __pyx_n_s_serve_forever); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 157, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_server, __pyx_n_s_serve_forever); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_4 = NULL;
   __pyx_t_7 = 0;
@@ -9211,7 +9221,7 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
     PyObject *__pyx_callargs[2] = {__pyx_t_4, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+1-__pyx_t_7, 0+__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 157, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
@@ -9226,22 +9236,22 @@ static PyObject *__pyx_gb_13c_proxyserver_11ProxyServer_13generator3(__pyx_Corou
     __pyx_generator->resume_label = 2;
     return __pyx_r;
     __pyx_L5_resume_from_await:;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 157, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 158, __pyx_L1_error)
   } else {
     PyObject* exc_type = __Pyx_PyErr_CurrentExceptionType();
     if (exc_type) {
       if (likely(exc_type == PyExc_StopIteration || (exc_type != PyExc_GeneratorExit && __Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration)))) PyErr_Clear();
-      else __PYX_ERR(0, 157, __pyx_L1_error)
+      else __PYX_ERR(0, 158, __pyx_L1_error)
     }
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
   /* "c_proxyserver.py":153
- *     self.chunks:int = 0
+ *         self.chunks:int = 0
  * 
- *   async def main(self):             # <<<<<<<<<<<<<<
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
+ *     async def main(self):             # <<<<<<<<<<<<<<
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
  */
 
   /* function exit code */
@@ -10295,32 +10305,32 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
 
   /* "c_proxyserver.py":46
  * 
- *     try:
- *       type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]             # <<<<<<<<<<<<<<
- *       host, port = target.split(b":")
- *     except:
+ *         try:
+ *             type, target = httpData.split(b"\r\n")[0].split(b" ")[0:2]             # <<<<<<<<<<<<<<
+ *             host, port = target.split(b":")
+ *         except:
  */
   __pyx_slice__5 = PySlice_New(__pyx_int_0, __pyx_int_2, Py_None); if (unlikely(!__pyx_slice__5)) __PYX_ERR(0, 46, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__5);
   __Pyx_GIVEREF(__pyx_slice__5);
 
   /* "c_proxyserver.py":111
- *     if host_end_index != -1:
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])             # <<<<<<<<<<<<<<
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")
- *                    + data[: host_end_index + 1])
+ *         if host_end_index != -1:
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])             # <<<<<<<<<<<<<<
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")
+ *                          + data[: host_end_index + 1])
  */
   __pyx_tuple__11 = PyTuple_Pack(2, __pyx_int_0, __pyx_int_255); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 111, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
   /* "c_proxyserver.py":112
- *       parts.append(bytes.fromhex("1603")
- *                    + bytes([random.randint(0, 255)])
- *                    + int(host_end_index + 1).to_bytes(2, byteorder="big")             # <<<<<<<<<<<<<<
- *                    + data[: host_end_index + 1])
- *       data = data[host_end_index + 1:]
+ *             parts.append(bytes.fromhex("1603")
+ *                          + bytes([random.randint(0, 255)])
+ *                          + int(host_end_index + 1).to_bytes(2, byteorder="big")             # <<<<<<<<<<<<<<
+ *                          + data[: host_end_index + 1])
+ *             data = data[host_end_index + 1:]
  */
   __pyx_tuple__12 = PyTuple_Pack(1, __pyx_int_2); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 112, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__12);
@@ -10329,9 +10339,9 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   /* "c_proxyserver.py":21
  * 
  * class ProxyServer():
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):             # <<<<<<<<<<<<<<
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):             # <<<<<<<<<<<<<<
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'
  */
   __pyx_tuple__20 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_host, __pyx_n_s_port, __pyx_n_s_debug, __pyx_n_s_show_logs, __pyx_n_s_show_stats); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
@@ -10339,11 +10349,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(6, 0, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_c_proxyserver_py, __pyx_n_s_init, 21, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 21, __pyx_L1_error)
 
   /* "c_proxyserver.py":40
- *     asyncio.run(self.main())
+ *         asyncio.run(self.main())
  * 
- *   async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
+ *     async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
  */
   __pyx_tuple__22 = PyTuple_Pack(12, __pyx_n_s_self, __pyx_n_s_localReader, __pyx_n_s_localWriter, __pyx_n_s_httpData, __pyx_n_s_type, __pyx_n_s_target, __pyx_n_s_host, __pyx_n_s_port, __pyx_n_s_remote_reader, __pyx_n_s_remote_writer, __pyx_n_s_sender, __pyx_n_s_receiver); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__22);
@@ -10351,11 +10361,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj_ = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 12, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__22, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_c_proxyserver_py, __pyx_n_s_connect, 40, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj_)) __PYX_ERR(0, 40, __pyx_L1_error)
 
   /* "c_proxyserver.py":83
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
- *   async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
- *     self.datas += 1
- *     self.globDatas += self.datas
+ *     async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
+ *         self.datas += 1
+ *         self.globDatas += self.datas
  */
   __pyx_tuple__23 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_localReader, __pyx_n_s_remoteWriter, __pyx_n_s_head, __pyx_n_s_data, __pyx_n_s_e, __pyx_n_s_parts, __pyx_n_s_blocked, __pyx_n_s_host_end_index, __pyx_n_s_part_len, __pyx_n_s_chunk, __pyx_n_s_resultData, __pyx_n_s_line, __pyx_n_s_site); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
@@ -10363,11 +10373,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__7 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__23, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_c_proxyserver_py, __pyx_n_s_fragment, 83, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__7)) __PYX_ERR(0, 83, __pyx_L1_error)
 
   /* "c_proxyserver.py":135
- *     await remoteWriter.drain()
+ *         await remoteWriter.drain()
  * 
- *   async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
+ *     async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
  */
   __pyx_tuple__24 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_reader, __pyx_n_s_writer); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
@@ -10375,11 +10385,11 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS|CO_COROUTINE, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_c_proxyserver_py, __pyx_n_s_pipe, 135, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 135, __pyx_L1_error)
 
   /* "c_proxyserver.py":153
- *     self.chunks:int = 0
+ *         self.chunks:int = 0
  * 
- *   async def main(self):             # <<<<<<<<<<<<<<
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
+ *     async def main(self):             # <<<<<<<<<<<<<<
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
  */
   __pyx_tuple__25 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_server, __pyx_n_s_seraverData); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
@@ -10985,8 +10995,8 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  * class ProxyServer():             # <<<<<<<<<<<<<<
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):
- *     self.log = initLogger(self)
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):
+ *         self.log = initLogger(self)
  */
   __pyx_t_3 = __Pyx_Py3MetaclassPrepare((PyObject *) NULL, __pyx_empty_tuple, __pyx_n_s_ProxyServer, __pyx_n_s_ProxyServer, (PyObject *) NULL, __pyx_n_s_c_proxyserver, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
@@ -10994,9 +11004,9 @@ if (!__Pyx_RefNanny) {
   /* "c_proxyserver.py":21
  * 
  * class ProxyServer():
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):             # <<<<<<<<<<<<<<
- *     self.log = initLogger(self)
- *     self.blockedlistFile = 'blacklist.txt'
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):             # <<<<<<<<<<<<<<
+ *         self.log = initLogger(self)
+ *         self.blockedlistFile = 'blacklist.txt'
  */
   __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 21, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -11019,11 +11029,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "c_proxyserver.py":40
- *     asyncio.run(self.main())
+ *         asyncio.run(self.main())
  * 
- *   async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
- *     httpData = await localReader.read(self.bufferSize)
- *     if self.showLogs:
+ *     async def connect(self, localReader, localWriter):             # <<<<<<<<<<<<<<
+ *         httpData = await localReader.read(self.bufferSize)
+ *         if self.showLogs:
  */
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_13c_proxyserver_11ProxyServer_3connect, __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_ProxyServer_connect, NULL, __pyx_n_s_c_proxyserver, __pyx_d, ((PyObject *)__pyx_codeobj_)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 40, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -11031,11 +11041,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "c_proxyserver.py":83
- *         self.log.info(f'Tasks size: {len(self.tasks)}')
+ *                 self.log.info(f'Tasks size: {len(self.tasks)}')
  * 
- *   async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
- *     self.datas += 1
- *     self.globDatas += self.datas
+ *     async def fragment(self, localReader, remoteWriter):             # <<<<<<<<<<<<<<
+ *         self.datas += 1
+ *         self.globDatas += self.datas
  */
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_13c_proxyserver_11ProxyServer_6fragment, __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_ProxyServer_fragment, NULL, __pyx_n_s_c_proxyserver, __pyx_d, ((PyObject *)__pyx_codeobj__7)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 83, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -11043,11 +11053,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "c_proxyserver.py":135
- *     await remoteWriter.drain()
+ *         await remoteWriter.drain()
  * 
- *   async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
- *     if self.showLogs:
- *       self.log.info(f'reader: {reader}')
+ *     async def pipe(self, reader, writer):             # <<<<<<<<<<<<<<
+ *         if self.showLogs:
+ *             self.log.info(f'reader: {reader}')
  */
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_13c_proxyserver_11ProxyServer_9pipe, __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_ProxyServer_pipe, NULL, __pyx_n_s_c_proxyserver, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 135, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -11055,11 +11065,11 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "c_proxyserver.py":153
- *     self.chunks:int = 0
+ *         self.chunks:int = 0
  * 
- *   async def main(self):             # <<<<<<<<<<<<<<
- *     server = await asyncio.start_server(self.connect, self.host, self.port)
- *     seraverData = server.sockets[1].getsockname()
+ *     async def main(self):             # <<<<<<<<<<<<<<
+ *         server = await asyncio.start_server(self.connect, self.host, self.port)
+ *         seraverData = server.sockets[0 if self.host else 1].getsockname()
  */
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_13c_proxyserver_11ProxyServer_12main, __Pyx_CYFUNCTION_COROUTINE, __pyx_n_s_ProxyServer_main, NULL, __pyx_n_s_c_proxyserver, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 153, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -11070,8 +11080,8 @@ if (!__Pyx_RefNanny) {
  * 
  * 
  * class ProxyServer():             # <<<<<<<<<<<<<<
- *   def __init__(self, host:str=None, port:int=8881, debug:bool=False, show_logs:bool=False, show_stats:bool=False):
- *     self.log = initLogger(self)
+ *     def __init__(self, host:str = None, port:int = 8881, debug:bool = False, show_logs:bool = False, show_stats:bool = False):
+ *         self.log = initLogger(self)
  */
   __pyx_t_4 = __Pyx_Py3ClassCreate(((PyObject*)&PyType_Type), __pyx_n_s_ProxyServer, __pyx_empty_tuple, __pyx_t_3, NULL, 0, 0); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 20, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
